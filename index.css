@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+#root{
+    cursor: url("./assets/cursordefault.png"), auto; 
+    margin: 0;
+    padding: 0;  -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: pixelated; 
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/291139.jpg');
+  background-size: 100% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -1;
+  font-family: 'Press Start 2P', cursive; 
+}
+h1 {
+  color: white;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  font-size: 1.14em;
+  text-align: center;
+  padding: 0 0 0 0;
+  margin: 7px 7px 17px 7px; }
+
+button {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: auto;
+  overflow: hidden;
+  outline: none;
+  background: url("./assets/button.png") no-repeat no-repeat;
+  background-clip: padding-box;
+  background-origin: padding-box;
+  background-position: center;
+  background-size: 100% 100%;
+  background-color: goldenrod;
+  font-size: 1.0em;
+  max-width: 100%;
+  min-width: 140px;
+  height: 60px;
+  display: inline-block;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+button.hover.hover,
+button:hover {
+  background-image: url("./assets/button-hover.png"); 
+}
+button.down,
+button:active {
+  background-image: url("./assets/button-down.png"); 
+}
+cursor-default {
+  cursor: url("./assets/cursordefault.png"), auto 
+}
+
+content,
+label {
+  cursor: url("./assets/cursordefault.png"), auto; }
+
+cursor-point,
+cursor-point * {
+  cursor: url("./assets/cursorpoint.png") 10 0, auto; 
+}
+
+content a,
+content button,
+button,
+slider-container,
+content input[type=radio].radio + label,
+list-imp,
+dropdown-imp,
+content input[type=checkbox].checkbox + label {
+  cursor: url("./assets/cursorpoint.png") 10 0, auto; 
+}
+
+cursor-select,
+cursor-select * {
+  cursor: url("./assets/cursorselect.png") 10 0, auto; 
+}
+
+
+cursor-select,
+ input,
+content textarea {
+  cursor: url("./assets/cursorselect.png") 10 0, auto; 
+}
+
+
+cursor-grab-open,
+cursor-grab-open * {
+  cursor: url("./assets/cursorgrab-open.png") 10 0, auto; 
+} 
+
+cursor-grab-close,
+cursor-grab-close * {
+  cursor: url("./assets/cursorgrab-close.png") 10 0, auto; 
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #6d5959;
+}
+
+.card {
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input,
+textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: white;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  font-size: 0.9em;
+  line-height: 32px;
+  background: #4e4a4e;
+  max-width: 100%;
+  width: 100%;
+  padding-left: 10px;
+  min-height: 30px;
+  -webkit-touch-callout: text;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.5); 
+}
+
+  label {
+    color: white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    font-size: 1.0em;
+    line-height: 20px;
+    display: inline; 
+  }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
