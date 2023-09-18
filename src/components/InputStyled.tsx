@@ -6,16 +6,18 @@ const InputStyled = styled.div`
     flex-direction: column;
     max-width: 400px;
     margin: 0 auto;
-
+    border: 10px;
+    border color: #red;
+    background image: url(../assets/parchmen)
     > label {
     font-weight: bold;
     margin-bottom: 4px;
     }
     > input {
     padding: 10px;
+    aling-itens: center;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 10px;
     }
 
     > button.submit-button {
@@ -29,7 +31,8 @@ const InputStyled = styled.div`
     }
 
     > button.submit-button:hover {
-    background-color: #2980b9;
+    background-color: red;
 }
 `
+
 export default InputStyled;

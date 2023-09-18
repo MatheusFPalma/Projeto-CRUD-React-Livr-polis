@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Livro from "../types/Livro";
 import { v4 as uuid } from "uuid";
-import InputStyled from "../components/InputStyled";
 import TabelaDeLivros from "../components/TabelaDeLivros";
+import styles from "./Home.module.css"
+import BarraDePesquisa from "../components/barraDePesquisa";
+
 
 function Home() {
 
@@ -18,6 +20,8 @@ function Home() {
     const [livroParaExcluir, setLivroParaExcluir] = useState<Livro | null>(null);
     const [livroDetalhado, setLivroDetalhado] = useState<Livro | null>(null);
     const [exibirDetalhes, setExibirDetalhes] = useState(false);
+    const [filtro, setFiltro] = useState<string>("");
+    const [exibirBiblioteca, setExibirBiblioteca] = useState<boolean>(false);
 
     function limparEstados() {
         setTitulo("");
@@ -27,6 +31,9 @@ function Home() {
         setDescricao("");
         setModoEdicao("");
     }
+    function toggleExibirBiblioteca() {
+        setExibirBiblioteca(!exibirBiblioteca);
+ }
 
     function cadastrar() {
         const novoLivro: Livro = {
@@ -129,9 +136,10 @@ function Home() {
     }
 
     return (
-        <>
-            <h1>Acervo de livros da biblioteca de Livrópolis</h1>
-            <InputStyled>
+        <div className={styles.container}>
+            <BarraDePesquisa filtro={filtro} setFiltro={setFiltro} />
+            <div className={styles.card}>  
+            <h1>Bem vindos a Livrópolis</h1>
                 <label htmlFor="titulo">Título:</label>
                 <input
                     name="titulo"
@@ -172,12 +180,17 @@ function Home() {
                     onChange={(e) => setDescricao(e.target.value)}
                     value={descricao}
                 />
-                <button onClick={clicarBotao}>
-                    {modoEdicao ? "Salvar" : "Cadastrar"}
-                </button>
-                {cadastroConfirmado && (
+
+                
+                <div className="botaoContainer">
+                    <button onClick={clicarBotao}>
+                        {modoEdicao ? "Salvar" : "Cadastrar"}
+                    </button>
+                    {cadastroConfirmado && (
                     <p style={{ color: 'green' }}>Livro cadastrado com sucesso!</p>
                 )}
+                    <button onClick={toggleExibirBiblioteca}>Biblioteca</button>
+                </div>
 
                 {mostrarModal && livroParaExcluir !== null && (
                     <div className="modal">
@@ -207,8 +220,8 @@ function Home() {
                     livros={livros}
                     modoEdicao={modoEdicao ? true : false}
                 />
-            </InputStyled>
-        </>
+            </div>
+        </div>
     );
 }
 
